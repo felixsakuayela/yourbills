@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %} Entrar {% endblock %}
 
 {% block content %}
 {% if user.is_anonymous %}
+
+<a href="">Solicitação</a>
 
 <form method="post">
     {% csrf_token %}
