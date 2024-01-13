@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} Solicitação de Despesas {% endblock %}
+
+{% block content %}
+  <h2>Recebidas</h2>
+  <ul>
+    {% for spent in received_pending_spents %}
+      <li>
+        {{ spent.value }} - {{ spent.date }} - {{ spent.type }} - {{ spent.expense }}
+        <form method="POST" action="{% url 'approve_spent' spent.id %}">
+          {% csrf_token %}
+          <button type="submit">Aprovar</button>
+        </form>
+        <form method="POST" action="{% url 'reject_spent' spent.id %}">
+          {% csrf_token %}
+          <button type="submit">Rejeitar</button>
+        </form>
+      </li>
+    {% empty %}
+      <li>Nenhuma.</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Pendentes</h2>
+  <ul>
+    {% for spent in sent_pending_spents %}
+      <li>{{ spent.value }} - {{ spent.date }} - {{ spent.expense }}</li>
+    {% empty %}
+      <li>Nenhuma</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Rejeitadas</h2>
+  <ul>
+    {% for spent in reproved_pending_spents %}
+      <li>
+        {{ spent.value }} - {{ spent.date }} - {{ spent.type }} - {{ spent.expense }}
+        <form method="POST" action="{% url 'resubmit_spent' spent.id %}">
+          {% csrf_token %}
+          <button type="submit">Voltar a Solicitar</button>
+        </form>
+      </li>
+    {% empty %}
+      <li>Nenhuma</li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

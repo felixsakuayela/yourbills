@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Cadastro {% endblock %}
+
+{% block content %}
+{% if user.is_anonymous %}
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="username" >Nome do Usuário</label>
+    <input type="username" name="username">
+
+    <label for="email" >E-mail</label>
+    <input type="email" name="email">
+
+    <label for="password1" >Palavra Passe</label>
+    <input type="password" name="password1">
+
+    <label for="password2" >Palavra Passe</label>
+    <input type="password" name="password2">
+
+    <button type="submit"><a>Cadastrar</a></button>
+
+</form>
+
+<a href="#"><button type="submit">Já tenho conta, fazer login</button></a>
+
+{% endif %}
+{% endblock %}

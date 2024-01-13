@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Entrar {% endblock %}
+
+{% block content %}
+{% if user.is_anonymous %}
+
+<form method="post">
+    {% csrf_token %}
+
+    <label for="username" >Nome do Usuário</label>
+    <input type="text" name="username">
+
+    <label for="password">Palavra Passe</label>
+    <input type="password" name="password">
+
+    <button type="submit">ENTRAR</button>
+
+</form>
+
+<a href="#"><button type="submit">Não tenho conta, criar</button></a>
+
+{% endif %}
+{% endblock %}

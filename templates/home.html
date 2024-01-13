@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} ContasHome {% endblock %}
+
+{% block content %}
+<nav>
+    <span>Página Inicial</span>
+</nav>
+<div>
+    <h3>Despesas</h3>
+      {% for expense in expenses %}
+        <li><a href="{% url 'list_spents' expense.id %}">{{ expense.name }}</a></li>
+        {% if request.user == expense.user_create %}
+        <li><a href="{% url 'edit_expense' expense.id %}">Editar</a></li>
+        <li><a href="{% url 'delete_expense' expense.id %}">Apagar</a></li>
+        <li><a href="{% url 'view_history' expense.id %}">Ver Histórico</a></li>
+        {% endif %}        
+      {% endfor %}
+    </ul>
+    </div>
+    <div>
+      <a href="{% url 'create_expense' %}">Criar Expend</a><br>
+      <a href="{% url 'create_spent' %}">Criar Spent</a><br>
+      <a href="{% url 'dashboard_spents' %}">Dashboard</a><br>
+      <a href="{% url 'pending_spents' %}">Solicitação</a>
+    </div>
+
+{% endblock %}

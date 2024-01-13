@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} {{ expense.name }} {% endblock %}
+
+{% block content %}
+<h2>Gastos para {{ expense.name }} Individual</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Usuário</th>
+      <th>Data</th>
+      <th>Valor</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for spent in spents %}
+      <tr>
+        {% if spent.user == request.user and not spent.users_shared.all %}
+        <td>{{ spent.user.username }}</td>
+        <td>{{ spent.date|date:"d M Y" }}</td>
+        <td>{{ spent.value }}</td>
+        <td><a href="{% url 'view_spent' expense.id spent.id %}">Detalhes do Gasto</a> </td>
+        {% endif %}
+      </tr>
+    <div>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2>Gastos para {{ expense.name }} Compartilhados</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Usuário</th>
+      <th>Data</th>
+      <th>Valor</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for spent in spents %}
+    {% if spent.user != request.user or spent.users_shared.all %}
+      <tr>
+        <td>{{ spent.user.username }}</td>
+        <td>{{ spent.date|date:"d M Y" }}</td>
+        <td>{{ spent.value }}</td>
+        <td><a href="{% url 'view_spent' expense.id spent.id %}">Detalhes do Gasto</a> </td>
+        
+      </tr>
+    {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Expenses</h2>
+  <table>
+    <tr>
+      <th>Produto</th>
+      <th>Quantidade</th>
+      <th>Preço</th>
+      <th>Data da Compra</th>
+    </tr>
+  {% for expense in expenses %}
+    <tr>
+      <td>{{ expense.produto }}</td>
+      <td>{{ expense.quantidade }}</td>
+      <td>{{ expense.preco }}</td>
+      <td>{{ expense.data_compra }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+{% endblock %}
+
+

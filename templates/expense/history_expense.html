@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} Histórico de Despesa: {{ expense.name }} {% endblock %}
+
+{% block content %}
+  <h2>Histórico de "{{ expense.name }}"</h2>
+  <ul>
+    {% for version in versions %}
+        <ul>
+          <li>Nome: {{ version.field_dict.name }}</li>
+          <li>Criado por: {{ version.revision.user }}</li>
+          <li>Data de Modificação: {{ version.field_dict.date_modified }}</li>
+        </ul>
+    {% endfor %}
+  </ul>
+{% endblock %}

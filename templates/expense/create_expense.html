@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} Criar Despesa {% endblock %}
+
+{% block content %}
+<div>
+  <h2>Criar despesa</h2>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+  </form>
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} Criar Despesa {% endblock %}
+
+{% block content %}
+  <h2>Registrar despesa</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <div>
+      {{ form.value.label_tag }} {{ form.value }}
+    </div>
+    <div>
+      {{ form.description.label_tag }} {{ form.description }}
+    </div>
+    <div>
+      {{ form.date.label_tag }} {{ form.date }}
+    </div>
+    <div>
+      {{ form.expense.label_tag }} {{ form.expense }}
+    </div>
+    <div>
+      {{ form.users_shared.label_tag }} {{ form.users_shared }}
+    </div>
+    <button type="submit">Salvar</button>
+  </form>
+{% endblock %}
+
+
+

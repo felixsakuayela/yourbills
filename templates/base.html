@@ -1,0 +1,21 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} <!-- title --> {% endblock %}</title>
+</head>
+<body>
+    <!-- navbar -->
+    {% include 'includes/navbar.html' %}
+
+    {% block content %}
+    <!-- content -->
+    {% endblock %}
+
+    <!-- footer -->
+    {% include 'includes/footer.html' %}
+</body>
+</html>

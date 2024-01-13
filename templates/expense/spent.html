@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} Detalhes do Gasto {% endblock %}
+
+{% block content %}
+  <h2>Detalhes do Gasto</h2>
+  <ul>
+    <li>Valor: {{ spent.value }}</li>
+    <li>Data: {{ spent.date }}</li>
+    {% if spent.description != None %}
+    <li>Descrição: {{ spent.description }}</li>
+    <li><a href="{% url 'edit_spent' spent.id %}">Editar</a></li>
+    {% endif %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,47 @@
+atuallize "{% extends 'base.html' %}
+{% block title %} Dashboard de Gastos {% endblock %}
+
+{% block content %}
+  <h2>Dashboard de Gastos</h2>
+  <h4>Filtro</h4>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    
+    <button type="submit">Filtrar</button>
+  </form>
+
+  {% for expense_with_spents in expenses_with_spents %}
+    {% if expense_with_spents.total_spent != None %}
+    <h3>{{ expense_with_spents.expense.name }}</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Valor</th>
+          <th>Criador</th>
+          <th>Compartilhados com</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for spent in expense_with_spents.spents %}
+          <tr>
+            <td>{{ spent.date|date:"d M Y" }}</td>
+            <td>{{ spent.value }}</td>
+            <td>{{ spent.user }}</td>
+            {% for user_shared in spent.users_shared.all %}
+            <td>{{ user_shared }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+        <tr>
+          <td><strong>Total</strong></td>
+          <td><strong>{{ expense_with_spents.total_spent }}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
+"
