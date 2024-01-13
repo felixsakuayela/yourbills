@@ -1,17 +1,12 @@
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.urls import reverse_lazy
 from django.views import generic
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.shortcuts import redirect
 
-class SignOut(generic.CreateView):
-    form_class = UserCreationForm
-    success_url = reverse_lazy('login')
-    template_name = 'account/sign_out.html'
-    def dispatch(self, request, *args, **kwargs):
-        if request.user.is_authenticated:
-            return redirect(reverse_lazy('home'))
-        return super().dispatch(request, *args, **kwargs)
+def SignOut(request):
+    logout(request)
+    return redirect('signin')
 
 class SignIn(generic.FormView):
     form_class = AuthenticationForm
