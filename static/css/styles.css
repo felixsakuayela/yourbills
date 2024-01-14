@@ -19,19 +19,40 @@ body{
 }
 
 .centralizar-card {
-    
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    
+    height: 100vh;
 }
+
 .card {
     background-color: #163346;
     /* background-color: #0C2230; */
     color: #fff;
 }
 
+.card-img {
+    display: flex;
+    justify-content: space-between;
+    width: 62%
+}
+
+.card-content {
+    margin-right: 31%; 
+}
+
+.borda{
+    border: none;
+    border-radius: 0;
+    background-color: #294F81;
+}
+
 .title-format {font-size: 24px;}
+.apresentation {font-size: 18px;}
+.apre-p {
+    font-size: 11px;
+}
 .labels-cor {
     background-color: #061B28;
     border: #061B28;

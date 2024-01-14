@@ -7,47 +7,58 @@
 {% block content %}
 {% if user.is_anonymous %}
 
-<main>
-
-    <div class="container">
+<main  style="width: 100%;">
     
-        <div class="centralizar-card">
+    <div class="centralizar-card">
+        <!-- =========== CARD de Apresentação =========== -->
+        <div class="card borda" style="width: 20rem; height: 100%;">
+            <div class="card-body">
+                <p><img src="../../static/images/logo_trans.png" style="width: 90%;" alt=""></p>
+                <h5 class="card-title apresentation">Navegue pelas suas Despesas com Agilidade e Controle.</h5>
+                <p class="apre-p">Com a ExpenseDash, você não apenas gerencia suas despesas, mas abre as portas para uma experiência financeira totalmente nova. Ganhe em eficiência, controle e tranquilidade</p>
     
-    
-            <div class="card" style="width: 25rem; height: 21rem;">
-                <div class="card-body rounded-5">
-                  <h5 class="card-title title-format">Faça o seu login</h5>
-                  <p>Ainda não tem uma conta? <a href="#">Cadastra-se</a></p>
-    
-                <form method="post" class="d-grid">
-                      {% csrf_token %}
-                  
-                      <div  class="form-floating mb-3 ">
-                          <input type="text" name="username" class="form-control labels-cor" id="floatingInput" placeholder="name@example.com">
-                          <label for="username" for="floatingInput">Usuário</label>
-                      </div>
-                  
-                      <div class="form-floating mb-3">
-                          <input type="password" name="password" class="form-control labels-cor" id="floatingPassword" placeholder="Password">
-                          <label for="password" >Palavra-passe</label>
-                      </div>
-                  
-                      <button type="submit" class="btn btn-primary btn-lg">ENTRAR</button>
-                  
-                </form>
-
                 
             </div>
         </div>
+
+
+        <div class="card-img">
+
+            <!-- =========== CARD COM FORMULÁRIO =========== -->
+            <div class="card" style="width: 25rem; height: 21rem;">
+                <div class="card-body rounded-5">
+                    <h5 class="card-title title-format">Faça o seu login</h5>
+                    <p>Ainda não tem uma conta? <a href="#">Cadastra-se</a></p>
         
-        <div>
-            <img src="../../static/images/robo.png" alt="">
-        </div>
+                    <form method="post" class="d-grid">
+                        {% csrf_token %}
+                    
+                        <div  class="form-floating mb-3 ">
+                            <input type="text" name="username" class="form-control labels-cor" id="floatingInput" placeholder="name@example.com">
+                            <label for="username" for="floatingInput">Usuário</label>
+                        </div>
+                    
+                        <div class="form-floating mb-3">
+                            <input type="password" name="password" class="form-control labels-cor" id="floatingPassword" placeholder="Password">
+                            <label for="password" >Palavra-passe</label>
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary btn-lg">ENTRAR</button>
+                    
+                    </form>
+                </div>
+            </div>
             
+            <!-- =========== DIV COM IMAGEM =========== -->
+            <div class="card-content">
+                <img src="../../static/images/robo.png" alt="">
+            </div>
         </div>
+        
+    </div>
     
      
-    </div>
+
 </main>
 
 
