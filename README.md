@@ -27,8 +27,12 @@ Siga estes passos após baixar o projeto:
 5. **Instalar o Django**:
     ```bash
     pip install django
+
+6. **Instalar o Django Reversion**:
+    ```bash
+    pip install django-reversion  
     ```
-6. **Rodar o app**:
+7. **Rodar o app**:
     Execute o comando abaixo para iniciar o servidor. O aplicativo estará rodando em http://127.0.0.1:8000/.
     ```bash
     python manage.py runserver

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Raleway:wght@400;700;800&display=swap');
+
+* {box-sizing: border-box;}   
+
+html {font-size: 14px;}
+
+body{ 
+    
+    color: white;
+}
+
+/*=============== LOGIN ===============*/
+.cor-login {
+    background-color: #061B28;
+
+
+}
+.centralizar-card {
+    /* background-color: #0C2230; */
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.cor-card {
+    background-color: #0C2230;
+    color: #fff;
+}
+
