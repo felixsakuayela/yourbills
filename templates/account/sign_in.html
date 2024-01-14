@@ -1,27 +1,59 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block body_class %}cor-login{% endblock %}
 
-{% block title %} Entrar {% endblock %}
+{% block title %} Faça o seu login ou cadastro {% endblock %}
 
 {% block content %}
 {% if user.is_anonymous %}
 
-<a href="">Solicitação</a>
+<main>
 
-<form method="post">
-    {% csrf_token %}
+    <div class="container">
+    
+        <div class="centralizar-card">
+    
+    
+            <div class="card" style="width: 18rem;">
+                <div class="card-body cor-card">
+                  <h5 class="card-title">Faça o seu Login</h5>
+    
+                  <form method="post">
+                      {% csrf_token %}
+                  
+                      <div  class="form-floating mb-3">
+                          <input type="text" name="username" class="form-control" id="floatingInput" placeholder="name@example.com">
+                          <label for="username" for="floatingInput">Usuário</label>
+                      </div>
+                  
+                      <div class="form-floating">
+                          <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+                          <label for="password" >Palavra-passe</label>
+                      </div>
+                  
+                      <div>
+                          <button type="submit" class="btn btn-primary btn-lg">ENTRAR</button>
+                      </div>
+                  
+                    </form>
+                    <div>
+                        <a href="#"><button type="submit">Não tenho conta, criar</button></a>
+                        
+                    </div>
+                  
+                </div>
+              </div>
+    
+    
+    
+        
+            
+        </div>
+    
+     
+    </div>
+</main>
 
-    <label for="username" >Nome do Usuário</label>
-    <input type="text" name="username">
-
-    <label for="password">Palavra Passe</label>
-    <input type="password" name="password">
-
-    <button type="submit">ENTRAR</button>
-
-</form>
-
-<a href="#"><button type="submit">Não tenho conta, criar</button></a>
 
 {% endif %}
 {% endblock %}
