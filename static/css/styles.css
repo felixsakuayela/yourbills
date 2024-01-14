@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Raleway:wght@400;700;800&display=swap');
+
+* {box-sizing: border-box;}   
+
+html {font-size: 14px;}
+
+body{ 
+    
+    color: white;
+}
+
+/*=============== LOGIN ===============*/
+.cor-login {
+    background-color: #061B28;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.centralizar-card {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.card {
+    background-color: #163346;
+    /* background-color: #0C2230; */
+    color: #fff;
+}
+
+.title-format {font-size: 24px;}
+
+
+
+
