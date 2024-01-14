@@ -32,6 +32,22 @@ body{
 }
 
 .title-format {font-size: 24px;}
+.labels-cor {
+    background-color: #061B28;
+    border: #061B28;
+    color: white;
+}
+.labels-cor:focus {
+    background-color: #061B28;
+    color: white;
+}
+
+.labels-cor:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s; 
+    background-color: #061B28; 
+    color: white;
+}
+
 
 
 

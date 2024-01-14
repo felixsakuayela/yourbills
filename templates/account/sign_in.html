@@ -16,19 +16,19 @@
     
             <div class="card" style="width: 24rem; height: 20rem;">
                 <div class="card-body rounded-5">
-                  <h5 class="card-title title-format">Faça o seu Login</h5>
+                  <h5 class="card-title title-format">Faça o seu login</h5>
                   <p>Ainda não tem uma conta? <a href="#">Cadastra-se</a></p>
     
                   <form method="post" class="d-grid">
                       {% csrf_token %}
                   
-                      <div  class="form-floating mb-3">
-                          <input type="text" name="username" class="form-control" id="floatingInput" placeholder="name@example.com">
+                      <div  class="form-floating mb-3 ">
+                          <input type="text" name="username" class="form-control labels-cor" id="floatingInput" placeholder="name@example.com">
                           <label for="username" for="floatingInput">Usuário</label>
                       </div>
                   
                       <div class="form-floating mb-3">
-                          <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+                          <input type="password" name="password" class="form-control labels-cor" id="floatingPassword" placeholder="Password">
                           <label for="password" >Palavra-passe</label>
                       </div>
                   
