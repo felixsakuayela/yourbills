@@ -12,20 +12,27 @@ body{
 /*=============== LOGIN ===============*/
 .cor-login {
     background-color: #061B28;
-
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
+
 .centralizar-card {
-    /* background-color: #0C2230; */
-    background-color: red;
+    
     display: flex;
     justify-content: space-around;
     align-items: center;
     
 }
-
-.cor-card {
-    background-color: #0C2230;
+.card {
+    background-color: #163346;
+    /* background-color: #0C2230; */
     color: #fff;
 }
+
+.title-format {font-size: 24px;}
+
+
+
 
