@@ -14,9 +14,10 @@
         <div class="centralizar-card">
     
     
-            <div class="card" style="width: 18rem;">
-                <div class="card-body cor-card">
-                  <h5 class="card-title">Faça o seu Login</h5>
+            <div class="card" style="width: 24rem; height: 20rem;">
+                <div class="card-body rounded-5">
+                  <h5 class="card-title title-format">Faça o seu Login</h5>
+                  <p>Ainda não tem uma conta? <a href="#">Cadastra-se</a></p>
     
                   <form method="post">
                       {% csrf_token %}
@@ -36,10 +37,10 @@
                       </div>
                   
                     </form>
-                    <div>
-                        <a href="#"><button type="submit">Não tenho conta, criar</button></a>
+                    
                         
-                    </div>
+                        
+                    
                   
                 </div>
               </div>
@@ -57,3 +58,4 @@
 
 {% endif %}
 {% endblock %}
+
