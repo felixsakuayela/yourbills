@@ -14,11 +14,12 @@
         <div class="centralizar-card">
     
     
-            <div class="card" style="width: 18rem;">
-                <div class="card-body cor-card">
-                  <h5 class="card-title">Faça o seu Login</h5>
+            <div class="card" style="width: 24rem; height: 20rem;">
+                <div class="card-body rounded-5">
+                  <h5 class="card-title title-format">Faça o seu Login</h5>
+                  <p>Ainda não tem uma conta? <a href="#">Cadastra-se</a></p>
     
-                  <form method="post">
+                  <form method="post" class="d-grid">
                       {% csrf_token %}
                   
                       <div  class="form-floating mb-3">
@@ -26,20 +27,18 @@
                           <label for="username" for="floatingInput">Usuário</label>
                       </div>
                   
-                      <div class="form-floating">
+                      <div class="form-floating mb-3">
                           <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
                           <label for="password" >Palavra-passe</label>
                       </div>
                   
-                      <div>
-                          <button type="submit" class="btn btn-primary btn-lg">ENTRAR</button>
-                      </div>
+                      <button type="submit" class="btn btn-primary btn-lg">ENTRAR</button>
                   
                     </form>
-                    <div>
-                        <a href="#"><button type="submit">Não tenho conta, criar</button></a>
+                    
                         
-                    </div>
+                        
+                    
                   
                 </div>
               </div>
@@ -57,3 +56,4 @@
 
 {% endif %}
 {% endblock %}
+
