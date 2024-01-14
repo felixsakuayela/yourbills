@@ -4,10 +4,6 @@
 
 html {font-size: 14px;}
 
-body{ 
-    
-    color: white;
-}
 
 /*=============== LOGIN ===============*/
 .cor-login {
@@ -68,7 +64,22 @@ body{
     color: white;
 }
 
+/*=============== HOME ===============*/
+
+body {
+    background-color: #D9E8FF;
+    color: black;
+}
 
 
+.borda-home{
+    border: none;
+    border-radius: 0;
+    background-color: white;
+    color: black;
+}
 
-
+.dark-mode {
+    background-color: black;
+    color: white;
+  }
