@@ -83,3 +83,40 @@ body {
     background-color: black;
     color: white;
   }
+
+.toggle-btn {display: flex; justify-content: space-between; }
+
+.form-check-input {
+    position: static;
+    margin-top: 0.3rem;
+    margin-left: -1.25rem;
+    cursor: pointer;
+    background-color: #D9E8FF;
+    border-color: #1369FA;
+}
+
+
+
+.form-switch .form-check-input:checked {
+    background-color: #141212;
+    border-color: #0448be;
+}
+
+
+
+
+
+
+/* Estilizando o input dentro de form-check */
+
+
+/* Estilizando o switch (a alça) dentro de form-switch */
+.form-switch .form-check-input {
+    width: 2.27rem;
+    height: 1.27rem;
+    padding: 0;
+    margin-top: 0;
+}
+
+
+
