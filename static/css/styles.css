@@ -79,11 +79,6 @@ body {
     color: black;
 }
 
-.dark-mode {
-    background-color: black;
-    color: white;
-  }
-
 .toggle-btn {display: flex; justify-content: space-between; }
 
 .form-check-input {
@@ -103,14 +98,6 @@ body {
 }
 
 
-
-
-
-
-/* Estilizando o input dentro de form-check */
-
-
-/* Estilizando o switch (a alça) dentro de form-switch */
 .form-switch .form-check-input {
     width: 2.27rem;
     height: 1.27rem;
@@ -119,4 +106,72 @@ body {
 }
 
 
+.hr-form {
+    padding-bottom: 10px;
+}
 
+.card p:hover{ 
+    background-color: #0D6DFF;
+    color: white;
+}
+.card-body p{ 
+    text-align: 30px;
+}
+
+.p-menu {
+    margin-bottom: 3em;
+}
+
+a:active {
+    background-color: rgb(173, 17, 17);
+    color: white;
+}
+
+
+
+
+    
+
+    .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 58px 0 0; 
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+    width: 240px;
+    z-index: 600;
+    }
+    
+    @media (max-width: 991.98px) {
+    .sidebar {
+    width: 100%;
+    }
+    }
+    .sidebar .active {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    }
+    
+    .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto; 
+    }
+
+
+
+
+  
+  a {
+    text-decoration: none;
+    background: var(--background-items);
+    padding: 8px;
+    border-radius: 4px;
+    width: max-content;
+    color: var(--text);
+  }
+  
